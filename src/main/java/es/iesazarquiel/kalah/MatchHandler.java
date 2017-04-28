@@ -17,11 +17,15 @@ public class MatchHandler extends Service<String> {
             while (houses[0][moveFrom] != 0) {
                 moveFrom = (int) (Math.random() * 12 + 1);
             }
-            if (moveFrom == 1) {
+            if (moveFrom == 0) {
                 stores[0] += 1;
                 houses[0][0] -= 1;
+            } else if (houses[0][moveFrom] == 1) {
+                stores[0] += houses[0][moveFrom] + houses[1][moveFrom];
+                houses[0][moveFrom] = 0;
+                houses[1][moveFrom] = 0;
             } else {
-                for (int i = houses[0][moveFrom]; i > 0; i--) {
+                for (int i = moveFrom; i > 0; i--) {
                     houses[0][i] += 1;
                     houses[0][moveFrom] -= 1;
                     if (houses[0][moveFrom] == 0) break;
@@ -37,7 +41,33 @@ public class MatchHandler extends Service<String> {
                 }
             }
         } else {
-            
+            int moveFrom = (int) (Math.random() * 12 + 1);
+            while (houses[1][moveFrom] != 0) {
+                moveFrom = (int) (Math.random() * 12 + 1);
+            }
+            if (moveFrom == houses[1].length) {
+                stores[1] += 1;
+                houses[1][houses[1].length] -= 1;
+            } else if (houses[1][moveFrom] == 1) {
+                stores[1] += houses[0][moveFrom] + houses[1][moveFrom];
+                houses[0][moveFrom] = 0;
+                houses[1][moveFrom] = 0;
+            } else {
+                for (int i = moveFrom; i < houses[1].length; i++) {
+                    houses[0][i] += 1;
+                    houses[0][moveFrom] -= 1;
+                    if (houses[1][moveFrom] == 0) break;
+                }
+                stores[1] += houses[1][moveFrom];
+                houses[1][moveFrom] = 0;
+            }
+            for (int i = 0; i < houses[1].length; i++) {
+                if (houses[1][i] == 1) {
+                    stores[1] += houses[0][moveFrom] + houses[1][moveFrom];
+                    houses[0][moveFrom] = 0;
+                    houses[1][moveFrom] = 0;
+                }
+            }
         }
         match.setHouses(houses);
         match.setStores(stores);
@@ -53,7 +83,7 @@ public class MatchHandler extends Service<String> {
         }
         Thread.sleep(750);
         if (winner) {
-            System.out.println("¡Ha ganado el jugador " + player);
+            System.out.println("¡Ha ganado el jugador " + player + "!");
         }
         else {
             nextTurn(player.equals(1) ? 2 : 1);
