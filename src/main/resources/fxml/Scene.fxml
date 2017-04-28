@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesazarquiel.kalah.FXMLController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesazarquiel.kalah.FXMLController">
    <children>
       <MenuBar>
         <menus>
@@ -40,7 +40,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <GridPane disable="true" VBox.vgrow="ALWAYS">
+      <GridPane fx:id="tableGrid" disable="true" VBox.vgrow="ALWAYS">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -56,72 +56,72 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="0">
+            <Label fx:id="store1" text="0">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <Label fx:id="store2" text="0" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="1">
+            <Label fx:id="house1" text="3" GridPane.columnIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="house7" text="3" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="2">
+            <Label fx:id="house2" text="3" GridPane.columnIndex="2">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="house8" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="3">
+            <Label fx:id="house3" text="3" GridPane.columnIndex="3">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Label fx:id="house9" text="3" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="4">
+            <Label fx:id="house4" text="3" GridPane.columnIndex="4">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Label fx:id="house10" text="3" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="5">
+            <Label fx:id="house5" text="3" GridPane.columnIndex="5">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <Label fx:id="house11" text="3" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="6">
+            <Label fx:id="house6" text="3" GridPane.columnIndex="6">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label text="3" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <Label fx:id="house12" text="3" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <font>
                   <Font size="42.0" />
                </font>
