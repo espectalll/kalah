@@ -47,7 +47,7 @@ public class FXMLController implements Initializable {
     protected void setStoreLabel(Integer id, Integer value) {
         try {
             if (id >= 1 && id <= 2) {
-                Label label = (Label) scene.lookup("#store" + id);
+                Label label = (Label) scene.lookup("#store" + id.toString());
                 label.setText(Integer.toString(value));
             } else {
                 throw new IllegalArgumentException("Incorrect ID");
@@ -60,7 +60,7 @@ public class FXMLController implements Initializable {
     protected void setHouseLabel(Integer id, Integer value) {
         try {
             if (id >= 1 && id <= 12) {
-                Label label = (Label) scene.lookup("#house" + id);
+                Label label = (Label) scene.lookup("#house" + id.toString());
                 label.setText(Integer.toString(value));
             } else {
                 throw new IllegalArgumentException("Incorrect ID");

@@ -13,9 +13,9 @@ public class MatchHandler extends Service<String> {
         int[][] houses = match.getHouses();
         int[] stores = match.getStores();
         if (player.equals(1)) {
-            int moveFrom = (int) (Math.random() * 12 + 1);
-            while (houses[0][moveFrom] != 0) {
-                moveFrom = (int) (Math.random() * 12 + 1);
+            int moveFrom = (int) (Math.random() * 6);
+            while (houses[0][moveFrom] == 0) {
+                moveFrom = (int) (Math.random() * 6);
             }
             if (moveFrom == 0) {
                 stores[0] += 1;
@@ -41,9 +41,9 @@ public class MatchHandler extends Service<String> {
                 }
             }
         } else {
-            int moveFrom = (int) (Math.random() * 12 + 1);
-            while (houses[1][moveFrom] != 0) {
-                moveFrom = (int) (Math.random() * 12 + 1);
+            int moveFrom = (int) (Math.random() * 6);
+            while (houses[1][moveFrom] == 0) {
+                moveFrom = (int) (Math.random() * 6);
             }
             if (moveFrom == houses[1].length) {
                 stores[1] += 1;
