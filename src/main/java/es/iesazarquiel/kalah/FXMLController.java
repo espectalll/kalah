@@ -24,6 +24,23 @@ public class FXMLController implements Initializable {
     // @FXML private RadioMenuItem cpuVScpu;
     // @FXML private RadioMenuItem cpuVShuman;
     
+    @FXML private Label store1;
+    @FXML private Label store2;
+    
+    @FXML private Label house1;
+    @FXML private Label house2;
+    @FXML private Label house3;
+    @FXML private Label house4;
+    @FXML private Label house5;
+    @FXML private Label house6;
+    
+    @FXML private Label house7;
+    @FXML private Label house8;
+    @FXML private Label house9;
+    @FXML private Label house10;
+    @FXML private Label house11;
+    @FXML private Label house12;
+    
     private Scene scene;
     
     @FXML
@@ -46,11 +63,10 @@ public class FXMLController implements Initializable {
     
     protected void setStoreLabel(Integer id, Integer value) {
         try {
-            if (id >= 1 && id <= 2) {
-                Label label = (Label) scene.lookup("#store" + id.toString());
-                label.setText(Integer.toString(value));
-            } else {
-                throw new IllegalArgumentException("Incorrect ID");
+            switch (id) {
+                case 1: store1.setText(Integer.toString(value)); break;
+                case 2: store2.setText(Integer.toString(value)); break;
+                default: throw new IllegalArgumentException("Incorrect ID"); 
             }
         } catch (Exception ex) {
             Logger.getLogger(MatchHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -59,11 +75,20 @@ public class FXMLController implements Initializable {
     
     protected void setHouseLabel(Integer id, Integer value) {
         try {
-            if (id >= 1 && id <= 12) {
-                Label label = (Label) scene.lookup("#house" + id.toString());
-                label.setText(Integer.toString(value));
-            } else {
-                throw new IllegalArgumentException("Incorrect ID");
+            switch (id) {
+                case 1: house1.setText(Integer.toString(value)); break;
+                case 2: house2.setText(Integer.toString(value)); break;
+                case 3: house3.setText(Integer.toString(value)); break;
+                case 4: house4.setText(Integer.toString(value)); break;
+                case 5: house5.setText(Integer.toString(value)); break;
+                case 6: house6.setText(Integer.toString(value)); break;
+                case 7: house7.setText(Integer.toString(value)); break;
+                case 8: house8.setText(Integer.toString(value)); break;
+                case 9: house9.setText(Integer.toString(value)); break;
+                case 10: house10.setText(Integer.toString(value)); break;
+                case 11: house11.setText(Integer.toString(value)); break;
+                case 12: house12.setText(Integer.toString(value)); break;
+                default: throw new IllegalArgumentException("Incorrect ID"); 
             }
         } catch (Exception ex) {
             Logger.getLogger(MatchHandler.class.getName()).log(Level.SEVERE, null, ex);

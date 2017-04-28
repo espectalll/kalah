@@ -14,16 +14,16 @@ public class MatchHandler extends Service<String> {
         int[] stores = match.getStores();
         if (player.equals(1)) {
             int moveFrom = (int) (Math.random() * 6);
-            while (houses[0][moveFrom] == 0) {
+            while (houses[0][moveFrom] <= 0) {
                 moveFrom = (int) (Math.random() * 6);
             }
-            if (moveFrom == 0) {
-                stores[0] += 1;
-                houses[0][0] -= 1;
-            } else if (houses[0][moveFrom] == 1) {
+            if (houses[0][moveFrom] == 1) {
                 stores[0] += houses[0][moveFrom] + houses[1][moveFrom];
                 houses[0][moveFrom] = 0;
                 houses[1][moveFrom] = 0;
+            } else if (moveFrom == 0) {
+                stores[0] += 1;
+                houses[0][0] -= 1;
             } else {
                 for (int i = moveFrom; i > 0; i--) {
                     houses[0][i] += 1;
@@ -42,16 +42,16 @@ public class MatchHandler extends Service<String> {
             }
         } else {
             int moveFrom = (int) (Math.random() * 6);
-            while (houses[1][moveFrom] == 0) {
+            while (houses[1][moveFrom] <= 0) {
                 moveFrom = (int) (Math.random() * 6);
             }
-            if (moveFrom == houses[1].length) {
-                stores[1] += 1;
-                houses[1][houses[1].length] -= 1;
-            } else if (houses[1][moveFrom] == 1) {
+            if (houses[1][moveFrom] == 1) {
                 stores[1] += houses[0][moveFrom] + houses[1][moveFrom];
                 houses[0][moveFrom] = 0;
                 houses[1][moveFrom] = 0;
+            } else if (moveFrom == houses[1].length) {
+                stores[1] += 1;
+                houses[1][houses[1].length] -= 1;
             } else {
                 for (int i = moveFrom; i < houses[1].length; i++) {
                     houses[0][i] += 1;
